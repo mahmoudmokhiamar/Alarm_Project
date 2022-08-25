@@ -1,4 +1,4 @@
 # Arduino Alarm Project
-Wireless alarm project (Transmitter-Receiver).
+Wireless alarm project using arduino UNO boards (Transmitter-Receiver).
 
 
