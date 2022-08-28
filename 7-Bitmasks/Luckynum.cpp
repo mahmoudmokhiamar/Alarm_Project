@@ -9,25 +9,24 @@ const int N = 1e5+5;
 int main()
 {
     FIO
-
-    int n; cin >> n;
-    int arr[n];
-    int ans = INT_MIN;
-    for(int k = 0; k < n; k++)
-    {
-        cin >> arr[k];
-    }
-    for(int msk=1; msk < (1<<n); msk++){
-            int prev = -1, cnt = 0;
-        for(int i=0;i < n; i++){
-            if((msk>>i)&1)
-            {
-                if(arr[i] > prev){prev = arr[i];cnt++;}
-            }
+    string number; cin >> number;
+    int sz = (int)number.size();
+    ll ans = 99999999999999999999;
+    for(int i=sz; i<=10; i++){
+    for(int msk=0; msk<(1<<i); msk++){
+        int cnt = 0;
+        string luck_num = "";
+        for(int j = 0; j < i; j++){
+            if((msk>>j)&1){luck_num +='4';cnt++;}
+            else{luck_num+='7';cnt--;}
         }
-        ans = max(cnt,ans);
+        ll suplucknum = stoll(luck_num);
+        ll giv_num = stoll(number);
+        if(!cnt && suplucknum >= giv_num){
+            ans = min(ans, suplucknum);
+        }
+        else{luck_num = "";} //continue looking.
     }
-
-    cout << ans << el;
-
+  }
+  cout << ans << el;
 }
