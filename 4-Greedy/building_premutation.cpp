@@ -18,6 +18,10 @@ int main()
         cin >> v[i];
     }
     sort(v.begin(),v.end());
+
+    vector<int> v1(size);
+
+
     for (int i = 0; i < size; i++)
     {
         ans += abs(v[i]-(i+1));
